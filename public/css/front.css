@@ -1,0 +1,87 @@
+body {
+  color: #000;
+}
+
+.navbar-laravel {
+  background-color: #fff0c6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.navbar-brand {
+  color: #000 !important;
+}
+
+.nav-link {
+  color: #000 !important;
+}
+
+.table-dark {
+  color: #fff;
+}
+
+.list-group-item {
+  border-color: #fff;
+  background-color: #000;
+}
+
+.login-box {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.login-header {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.login-body {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.header .logo {
+  width: 120px;
+  height: 80px;
+}
+
+.posts .post {
+  position: relative;
+  margin: 2em 0 2em 40px;
+  padding: 8px 15px;
+  background: #fff0c6;
+  border-radius: 30px;
+}
+
+.posts .post .date {
+  font-size: 1em;
+  color: #999999;
+}
+
+.posts .post .title {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.posts .post .name {
+  font-size: 0.8;
+  position: relative;
+  margin: 2em 150px 0 40px;
+  padding: 8px 15px;
+  background: #fff;
+  border-radius: 30px;
+}
+
+.posts .post .body {
+  font-size: 0.8em;
+  position: relative;
+  margin: 2em 0 2em 40px;
+  padding: 8px 15px;
+  background: #fff;
+  border-radius: 30px;
+}
+
+.cond_title {
+  margin: 0 0 0 0;
+}
+
+.comment {
+  font-size: 20px;
+}
+
