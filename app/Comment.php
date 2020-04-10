@@ -11,7 +11,12 @@ class Comment extends Model
         'body',
         ];
         
-    public function post()
+    public static $rules = array(
+            'name' => 'required',
+            'body' => 'required',
+        );
+        
+    public function show()
     {
         return $this->belongsTo('App\Talk');
     }

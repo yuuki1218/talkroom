@@ -20,6 +20,7 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('/', 'TalkroomController@index');
+Route::get('show', 'TalkroomController@show');
 Route::get('comment', 'CommentsController@comment');
 Route::post('comment', 'CommentsController@post');
 

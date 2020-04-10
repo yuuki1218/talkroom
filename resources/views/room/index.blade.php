@@ -46,7 +46,7 @@
                             <div class="body">
                                 {{ str_limit($post->body, 300) }}
                             </div>
-                            <a class="card-link" href="{{ route('posts.show', ['post' => $post]) }}">
+                            <a class="card-link" href="{{ action('TalkroomController@show', ['id' => $post->id] ) }}">
                                 続きを読む
                             </a>
                             <div class="comment">
