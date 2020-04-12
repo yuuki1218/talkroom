@@ -15,6 +15,7 @@
                     @endif
 
                     You are logged in!
+                     <a class="navbar" href="{{ url('/') }}">Talk room</a>
                 </div>
             </div>
         </div>

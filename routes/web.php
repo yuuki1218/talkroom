@@ -19,10 +19,9 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('talk/edit', 'Admin\TalkController@update')->middleware('auth');
 });
 
-Route::get('/', 'TalkroomController@index');
-Route::get('show', 'TalkroomController@show');
-Route::get('comment', 'CommentsController@comment');
-Route::post('comment', 'CommentsController@post');
+Route::get('/', 'TalkroomController@index')->name('top');
+Route::get('/talkroom/{id}', 'TalkroomController@show');
+Route::post('/talkroom/{post}/comments', 'CommentsController@store');
 
 
 

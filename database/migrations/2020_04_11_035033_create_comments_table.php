@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use App\Talk;
 
 class CreateCommentsTable extends Migration
 {
@@ -14,11 +15,12 @@ class CreateCommentsTable extends Migration
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedInteger('post_id');
+            $table->increments('id');
+            $table->integer('talk_id')->unsigned();
             $table->string('name')->nullable();
-            $table->string('body');
+            $table->text('body');
             $table->timestamps();
+            $table->foreign('talk_id')->references('id')->on('talks');
         });
     }
 

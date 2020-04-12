@@ -2,26 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Comment;
 use App\Talk;
 
 class CommentsController extends Controller
 {
-    public function post(Request $request)
+    public function store(Request $request, $talkId)
     {
         $this->validate($request, Comment::$rules);
-        $comment = new Comment;
-        $form = $request->all();
+        $comment = new Comment(['name' => $request->name,
+                                'body' => $request->body]);
      
-        unset($form['_token']);
-     
-        $comment->fill($form)->save();
-        return redirect('/');
-    }
-    
-    public function comment()
-    {
-        return view('room.comment');
+        $post = Talk::findOrFail($talkId);
+        $post->comments()->save($comment);
+        return view('talkroom.show')->with('post', $post);
     }
 }

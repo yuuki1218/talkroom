@@ -1,5 +1,5 @@
 @extends('layouts.front')
-
+@section('title', 'Room')
 @section('content')
     <div class="container">
         <div class="row">
@@ -29,16 +29,16 @@
             </div>
         </div>
         <div class="row">
-            <div class="posts col-md-8 mx-auto">
+            <div class="posts col-md-12 mx-auto">
                 @foreach ($posts as $post)
                     <div class="post">
                         <div class="row">
-                            <div class="text col-md-6">
+                            <div class="text col-md-12">
                             <div class="date">
                                 {{ $post->updated_at->format('Y年m月d日') }}
                             </div>
                             <div class="title">
-                                {{ str_limit($post->title, 50) }}
+                                {{ str_limit($post->title, 100) }}
                             </div>
                             <div class="name">
                                 {{ str_limit($post->name, 10) }}
@@ -46,20 +46,13 @@
                             <div class="body">
                                 {{ str_limit($post->body, 300) }}
                             </div>
-                            <a class="card-link" href="{{ action('TalkroomController@show', ['id' => $post->id] ) }}">
-                                続きを読む
+                            <a class="card-link" href="{{ action('TalkroomController@show', ['id' => $post->id]) }}">
+                                <i class="far fa-comments">{{ $post->comments->count() }}件</i>
                             </a>
-                            <div class="comment">
-                                <div class="dropdown">
-                                    <a class="card-link" href="{{ action('CommentsController@comment') }}">
-                                        <i class="far fa-comments"></i>
-                                    </a>
-                                </div>
-                            </div>
                             </div>
                         </div>
                     </div>
-                @endforeach    
+              @endforeach
             </div>
         </div>
     </div>

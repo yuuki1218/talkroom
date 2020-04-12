@@ -33,8 +33,9 @@
                         </div>
                     </div>
                     {{ csrf_field() }}
-                    <input type="submit" class="btn btn-prinary" value="投稿">
+                    <input type="submit" class="btn btn-primary" value="投稿">
                 </form>
+                <a class="btn btn-primary" href="{{ action('Admin\TalkController@index') }}">投稿一覧</a>
             </div>
         </div>
     </div>

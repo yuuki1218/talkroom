@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Talk;
 
 class Comment extends Model
 {
@@ -16,7 +17,7 @@ class Comment extends Model
             'body' => 'required',
         );
         
-    public function show()
+    public function talks()
     {
         return $this->belongsTo('App\Talk');
     }

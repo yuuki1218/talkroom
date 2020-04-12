@@ -19,7 +19,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
         <div class="container">
-            <a class="navbar" href="{{ url('/') }}">トークルーム</a>
+            <a class="navbar" href="{{ url('/') }}">Talk room</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span> 
                 </button>
@@ -29,7 +29,8 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     @guest
-                        <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                        <li><a class="nav-link" href="{{ route('login') }}">ログイン</a></li>
+                        <li><a class="nav-link" href="{{ route('register') }}">新規登録</a></li>
                     @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -51,6 +52,9 @@
                     </div>
                 </div>
             </nav>
+             @if (session('flash_message'))
+                 <div class="flash_message" onclick="this.classList.add('hidden')">{{ session('flash_message') }}</div>
+             @endif
             <main class="py-4">
                 @yield('content')
             </main>
